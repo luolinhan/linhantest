@@ -68,6 +68,7 @@ class ImtTestTool():
             f.write('\n')
             f.write("请求异常!!!message is "  + eval(text)['message'])
             f.write('\n')
+            f.write('\n')
             f.write(json.dumps(text))
             f.write('\n')
             f.close()
