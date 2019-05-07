@@ -19,6 +19,7 @@ import smtplib
 import requests
 import os
 
+
 class ImtTestTool():
     def __init__(self):
         # 判断同级目录是否有log文件夹
@@ -61,6 +62,7 @@ class ImtTestTool():
         else:
             self.logger.error("结果异常:{}".format(str(text)))
             f.write("time:" + time.strftime("%H:%M:%S") + '\n')
+            f.write('\n')
             f.write('\n')
             f.write(url)
             f.write('\n')
