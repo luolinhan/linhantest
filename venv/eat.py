@@ -16,8 +16,8 @@ def index():
         user = request.form.get('say_user')
         date = time.strftime('%Y-%m-%d %H:%M:%S',time.localtime())
         if not title or not text or not user or not date or len(title) < 1 or len(text) <1 :
-            print('Invalid input.')  # 显示错误提示
-            return redirect(url_for('index'))  # 重定向回主页
+            print('Invalid input.')  
+            return redirect(url_for('index'))  # 回index
  
         users.append({"title": title,
                       "text":text,
