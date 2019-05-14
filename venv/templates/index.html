@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>加班订餐页面</title>
+<img src="/static/logo.png";>
+</head>
+<body>
+        <center><h1>加班订餐</h1></center>
+ 
+        <center>
+            <form name="dingcan" action="{{ url_for('index') }}" method="POST">
+                测试人员: <input type="text" name="say_user" size="16"><br>
+                订餐内容: <input type="text" name="say_title" size="16"><br>
+                订餐备注: <input type="text" name="say" size="16"><br>
+                <input type="submit" value="提交" style="width:100px;height:200px">
+            </form>
+        </center>
+ 
+<input style="background:transparent;border:1px solid #ffffff">
+    <center>
+        <table class="linhantable" border="1" cellspacing="5" cellpadding="20">
+            <thead>
+            <tr>
+                <th>测试人员</th>
+                <th>订餐内容</th>
+                <th>订餐备注</th>
+                <th>订餐时间</th>
+            </tr>
+            </thead>
+ 
+            <tbody>
+ 
+            {% for say in says %}
+                <tr>
+                    <td>{{ say['user'] }}</td>
+                    <td>{{ say['title'] }}</td>
+                    <td>{{ say['text'] }}</td>
+                    <td>{{ say['date'] }}</td>
+                </tr>
+            {% endfor %}
+ 
+            </tbody>
+        </table>
+    </center>
+</body>
+</html>
