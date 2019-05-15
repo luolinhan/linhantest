@@ -1,3 +1,5 @@
+#coding: UTF-8
+#Author：lhluo 
 from concurrent.futures import ThreadPoolExecutor, as_completed, wait, FIRST_COMPLETED
 import sys
 sys.path.append("..")
