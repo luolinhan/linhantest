@@ -2,17 +2,16 @@
 
 import sys
 import time
-import urllib
+import urllib.request
 import urllib3
+import urllib2
 import requests
 import numpy as np
 from bs4 import BeautifulSoup
 from openpyxl import Workbook
 
-reload(sys)
-sys.setdefaultencoding('utf8')
-
-
+import importlib
+importlib.reload(sys)
 
 #Some User Agents
 hds=[{'User-Agent':'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6'},\
@@ -27,7 +26,7 @@ def book_spider(book_tag):
     
     while(1):
         #url='http://www.douban.com/tag/%E5%B0%8F%E8%AF%B4/book?start=0' # For Test
-        url='http://www.douban.com/tag/'+urllib.quote(book_tag)+'/book?start='+str(page_num*15)
+        url='http://www.douban.com/tag/'+urllib.request.quote(book_tag)+'/book?start='+str(page_num*15)
         time.sleep(np.random.rand()*5)
         
         #Last Version
